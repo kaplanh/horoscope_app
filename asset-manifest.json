@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "//horoscope_app/static/css/main.4c1cd7db.css",
-    "main.js": "//horoscope_app/static/js/main.23b81a7b.js",
-    "static/media/logo.png": "//horoscope_app/static/media/logo.d6c42622bddf5a8e7575.png",
-    "index.html": "//horoscope_app/index.html",
-    "main.4c1cd7db.css.map": "//horoscope_app/static/css/main.4c1cd7db.css.map",
-    "main.23b81a7b.js.map": "//horoscope_app/static/js/main.23b81a7b.js.map"
+    "main.css": "/horoscope_app/static/css/main.4c1cd7db.css",
+    "main.js": "/horoscope_app/static/js/main.e8147426.js",
+    "static/media/logo.png": "/horoscope_app/static/media/logo.d6c42622bddf5a8e7575.png",
+    "index.html": "/horoscope_app/index.html",
+    "main.4c1cd7db.css.map": "/horoscope_app/static/css/main.4c1cd7db.css.map",
+    "main.e8147426.js.map": "/horoscope_app/static/js/main.e8147426.js.map"
   },
   "entrypoints": [
     "static/css/main.4c1cd7db.css",
-    "static/js/main.23b81a7b.js"
+    "static/js/main.e8147426.js"
   ]
 }
