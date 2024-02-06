@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/kaplanh/horoscope_app/static/css/main.4c1cd7db.css",
+    "main.js": "/kaplanh/horoscope_app/static/js/main.1521e64b.js",
+    "static/media/logo.png": "/kaplanh/horoscope_app/static/media/logo.d6c42622bddf5a8e7575.png",
+    "index.html": "/kaplanh/horoscope_app/index.html",
+    "main.4c1cd7db.css.map": "/kaplanh/horoscope_app/static/css/main.4c1cd7db.css.map",
+    "main.1521e64b.js.map": "/kaplanh/horoscope_app/static/js/main.1521e64b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4c1cd7db.css",
+    "static/js/main.1521e64b.js"
+  ]
+}
