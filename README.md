@@ -123,8 +123,6 @@ Horoscope App(folder)
 
 ### At the end of the project, the following topics are to be covered;
 
-- Component
-- JSX & JS
 - sass with react
   ```
    // src/scss/_reset.scss
@@ -142,13 +140,42 @@ Horoscope App(folder)
       $neon: #dbf227;
       $beige: #d6d58e;
   
+   // src/scss/_mixins.scss
+    @mixin media-xsm {
+    @media screen and (min-width: 0px) {
+      @content;
+    }
+  }
+  
+  
+  @mixin media-sm {
+    @media screen and (min-width: 576px) {
+      @content;
+    }
+  }
+
+
+
+  
    // src/scss/app.scss
   
-    @import "reset", "variables";
+    @import "reset", "variables","mixins";
     body {
         background-color:$beige;
         text-align: center;
         }
+
+   // src/components/navbar/Navbar.scss
+  
+    @import "../../scss/mixins";
+
+  @include media-lg{
+    .header{
+        margin-top: 10rem;
+    }
+  }
+
+  
    // src/App.jsx
      import "./scss/app.scss";
 
@@ -156,84 +183,55 @@ Horoscope App(folder)
    
 
 
-- Module.css with react
-  ```
-   // src/scss/card.module.scss
-  .container {
-    .card {
-        box-shadow: 8px 8px 25px rgba(0, 0, 0, 0.4);
 
-        max-width: 300px;
-        margin: 2rem auto;
-        border-radius: 1rem;
-        padding: 1rem;
-        h1 {
-            color: red;
-        }
-   }
-   // src/components/Card.jsx
-  
-      import CardStyle from "../scss/card.module.scss";
-      
-      const Card = ({ data }) => {
-          console.log(data);
-          //? js
-          return (
-              <div className={CardStyle.container}>
-                  {data.map((item) => {
-                      //? JS
-                      const { id, name, job, img, comment } = item;
-                      return (
-                          <div key={id} className={CardStyle.card}>
-                              <h1>{name}</h1>
-                              <h3>{job}</h3>
-                              <p>{comment}</p>
-                              <img src={img} alt="img" />
-                              <div className={CardStyle.buttons}>
-                                  <button className={CardStyle.small}>Small</button>
-                                  <button className={CardStyle.large}>Large</button>
-                              </div>
-                          </div>
-                      );
-                  })}
-              </div>
-          );
-      };
-      
-      export default Card;
-
-  ```
-- Component icinde json datayi map() leme
+- Parent Component icinde json datayi map() leme
    ```
-   // src/components/Card.jsx
-   import CardStyle from "../scss/card.module.scss";
+   // src/components/main/Main.jsx Parent component
+   
+         import { data } from "../../helpers/data";
+        import "./Main.scss";
+        import Card from "./Card";
+        const Main = () => {
+            // console.log(data);
+            return (
+                <div className="card-container">
+                    {data.map((item, i) => (
+                        // !props
+                        // ?asagi data göndermenin 1.yolu
+                        // <Card item={item} />
+                        // böyle gönderirsek diger tarafta props.item.title seklinde yakalamaliyim
+                        // ?asagi data göndermenin 2.yolu
+                        <Card key={item.id} {...item} />
+                        
+                    ))}
+                </div>
+            );
+        };
+        export default Main;
 
-          const Card = ({ data }) => {
-              console.log(data);
-              //? js
-              return (
-                  <div className={CardStyle.container}>
-                      {data.map((item) => {
-                          //? JS
-                          const { id, name, job, img, comment } = item;
-                          return (
-                              <div key={id} className={CardStyle.card}>
-                                  <h1>{name}</h1>
-                                  <h3>{job}</h3>
-                                  <p>{comment}</p>
-                                  <img src={img} alt="img" />
-                                  <div className={CardStyle.buttons}>
-                                      <button className={CardStyle.small}>Small</button>
-                                      <button className={CardStyle.large}>Large</button>
-                                  </div>
-                              </div>
-                          );
-                      })}
-                  </div>
-              );
-          };
-          
-          export default Card;
+
+
+   // src/components/main/Card.jsx Child component
+   
+       const Card = ({ title, date, image, desc }) => {
+        // const { title, date, image, desc } = props;
+        // console.log("ne geliyor", props);
+        return (
+            <div className="cards">
+                <div className="title">
+                    <h1>{title}</h1>
+                </div>
+                <div className="date">
+                    <h2>{date}</h2>
+                </div>
+                <img src={image} alt="" />
+                <div className="card-over">
+                    <p>{desc}</p>
+                </div>
+            </div>
+        );
+    };
+
   ```
 - Deploy with GitHub Pages
   
@@ -259,13 +257,13 @@ Horoscope App(folder)
     },
 ```
    
-   ### 💻  add github.io link as homepage:  "homepage": "https://kaplanh.github.io/sass---module.scss"  👇
+   ### 💻  add github.io link as homepage:  "homepage": "https://kaplanh.github.io/horoscope_app", 👇
 
 ```bash
 // src/package.json
- {
-    "homepage": "https://kaplanh.github.io/sass---module.scss",
-    "name": "sass---module.scss",
+{
+    "homepage": "https://kaplanh.github.io/horoscope_app",
+    "name": "horoscope_app",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
@@ -288,10 +286,75 @@ Horoscope App(folder)
 -    ### 💻  visit your page link 👇
 
   ```sh
-   https://kaplanh.github.io/sass---module.scss
+  https://kaplanh.github.io/horoscope_app
  ```
 
 
+- Image üzerine geldiginde alttan yukari dogru scrolsüz metin kaydirma
+
+  ```jsx
+   const Card = ({ title, date, image, desc }) => {
+    // const { title, date, image, desc } = props;
+    // console.log("ne geliyor", props);
+    return (
+        <div className="cards">
+            <div className="title">
+                <h1>{title}</h1>
+            </div>
+            <div className="date">
+                <h2>{date}</h2>
+            </div>
+            <img src={image} alt="" />
+            <div className="card-over">
+                <p>{desc}</p>
+            </div>
+        </div>
+    );
+  };
+
+
+  ```
+
+  ~~~css
+
+
+  
+    .cards {
+        width: 500px;
+        height: 350px;
+        position: relative;
+        overflow: hidden;        
+        &:hover .card-over {
+            transform: translate(0%);
+        }
+        &:hover img {
+            opacity: 1;
+        }
+
+
+
+    .card-over {
+        width: 500px;        
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        font-size: 1.5rem;
+        z-index: 3;
+        padding: 1rem;
+        transform: translateY(100%);
+        transition: transform 0.7s;
+        max-height: 75%;
+        overflow: auto;
+        // ?scrollbari kaybetmek icin
+        &::-webkit-scrollbar{
+            display: none;
+        }
+  
+    }
+  ~~~
+
+  
   
 
  
