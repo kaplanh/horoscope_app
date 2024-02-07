@@ -14,7 +14,7 @@
 |Deploy with GitHub Pages | |   
   
 
-<br/>
+---
 
 ## How To Run This Project 🚀
 
