@@ -1,9 +1,9 @@
 # Horoscope App
 
 
+[:point_right: Click here to see on browser](https://kaplanh.github.io/horoscope_app/)
 ![horoscope app](https://github.com/kaplanh/horoscope_app/assets/101884444/afc25b1b-8ef9-4a6e-a0c5-5a27c412f3ea)
 
-[:point_right: Click here to see on browser](https://kaplanh.github.io/horoscope_app/)
 
  **What's used in this app ?** |  **Author** |
 |----------|------------|
