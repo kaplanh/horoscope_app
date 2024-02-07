@@ -184,7 +184,7 @@ Horoscope App(folder)
   ```
    
 
--
+***
 
 - Parent Component icinde json datayi map() leme
    ```
