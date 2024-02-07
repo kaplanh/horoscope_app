@@ -184,7 +184,7 @@ Horoscope App(folder)
   ```
    
 
-***
+
 
 - Parent Component icinde json datayi map() leme
    ```
@@ -235,6 +235,7 @@ Horoscope App(folder)
     };
 
   ```
+   ---
 - Deploy with GitHub Pages
   
 -    ### 💻 write in Terminal 👇
@@ -358,7 +359,7 @@ Horoscope App(folder)
 
   
   
-
+---
  
 
 ## Feedback and Collaboration
