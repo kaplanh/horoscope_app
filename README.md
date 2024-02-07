@@ -5,7 +5,7 @@
 
 ![horoscope app](https://github.com/kaplanh/horoscope_app/assets/101884444/afc25b1b-8ef9-4a6e-a0c5-5a27c412f3ea)
 
-
+---
  **What's used in this app ?** |  **Author** |
 |----------|------------|
 |React - component |[Take a look at my portfolio](https://kaplanh.github.io/Portfolio_with_CssFlex/)|
