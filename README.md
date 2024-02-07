@@ -75,6 +75,7 @@ OR
 
 - ### <strong>Enjoy! 🎉</strong>
 
+---
 
 ## Project Skeleton 
 
@@ -121,7 +122,7 @@ Horoscope App(folder)
 |── yarn.lock
 
 ```
-
+---
 ### At the end of the project, the following topics are to be covered;
 
 - sass with react
@@ -183,7 +184,7 @@ Horoscope App(folder)
   ```
    
 
-
+-
 
 - Parent Component icinde json datayi map() leme
    ```
