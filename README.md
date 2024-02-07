@@ -3,7 +3,7 @@
 
 
 
-[:point_right: Click here to see on browser]()
+[:point_right: Click here to see on browser](https://kaplanh.github.io/horoscope_app/)
 
  **What's used in this app ?** |  **Author** |
 |----------|------------|
